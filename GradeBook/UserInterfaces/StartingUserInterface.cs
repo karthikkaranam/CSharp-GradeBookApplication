@@ -45,12 +45,12 @@ namespace GradeBook.UserInterfaces
             {
                 case "ranked":
                     {
-                        gradeBook = new RankedGradeBook(parts[1]);
+                        gradeBook = new RankedGradeBook(parts[1], bool.Parse(parts[3]));
                         break;
                     }
                 case "standard":
                     {
-                        gradeBook = new StandardGradeBook(parts[1]);
+                        gradeBook = new StandardGradeBook(parts[1],bool.Parse(parts[3]));
                         break;
                     }
                 default:

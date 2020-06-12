@@ -6,18 +6,22 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Reflection.Metadata.Ecma335;
 
 namespace GradeBook.GradeBooks
 {
     public abstract class BaseGradeBook
     {
         public string Name { get; set; }
+
+        public bool IsWeighted { get; set; }
         public List<Student> Students { get; set; }
 
-        public BaseGradeBook(string name)
+        public BaseGradeBook(string name, bool isWeighted)
         {
             Name = name;
             Students = new List<Student>();
+            IsWeighted = isWeighted;
         }
 
         public GradeBookType Type { get; set; }
