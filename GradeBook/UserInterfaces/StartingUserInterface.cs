@@ -49,7 +49,7 @@ namespace GradeBook.UserInterfaces
                         gradeBook = new RankedGradeBook(parts[1]);
                         break;
                     }
-                case GradeBookType.Standard:
+                case GradeBookType.standard:
                     {
                         gradeBook = new StandardGradeBook(parts[1]);
                         break;
