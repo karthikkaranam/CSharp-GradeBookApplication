@@ -5,7 +5,7 @@ using GradeBook.Enums;
 
 namespace GradeBook.GradeBooks
 {
-    class StandardGardeBook : BaseGradeBook
+    public class StandardGardeBook : BaseGradeBook
     {
         public StandardGardeBook(string name) : base(name)
         {
