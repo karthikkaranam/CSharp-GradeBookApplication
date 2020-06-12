@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using GradeBook.Enums;
+using System.Linq;
 
 namespace GradeBook.GradeBooks
 {
@@ -17,24 +18,24 @@ namespace GradeBook.GradeBooks
             {
                 throw new InvalidOperationException();
             }
-            switch (averageGrade)
+
+            var threshold = (int)Math.Ceiling(this.Students.Count * 0.2);
+            var grades = this.Students.OrderByDescending(c => c.AverageGrade).Select(c => c.AverageGrade).ToList();
+            if(grades[threshold-1] > averageGrade)
             {
-                case double grade when grade <= 20:
-                    {
-                        return 'A';
-                    }
-                case double grade when grade > 20 & grade <= 40:
-                    {
-                        return 'B';
-                    }
-                case double grade when grade > 40 & grade <= 60:
-                    {
-                        return 'C';
-                    }
-                case double grade when grade > 60 & grade <= 80:
-                    {
-                        return 'D';
-                    }
+                return 'A';
+            }
+            else if (grades[threshold*2 - 1] <= averageGrade)
+            {
+                return 'B';
+            }
+            else if (grades[threshold * 3 - 1] <= averageGrade)
+            {
+                return 'C';
+            }
+            else if (grades[threshold * 4 - 1] <= averageGrade)
+            {
+                return 'D';
             }
             return 'F';
         }
