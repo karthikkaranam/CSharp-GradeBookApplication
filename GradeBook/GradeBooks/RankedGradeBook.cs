@@ -19,7 +19,7 @@ namespace GradeBook.GradeBooks
             }
             switch (averageGrade)
             {
-                case double grade when grade >= 20:
+                case double grade when grade <= 20:
                     {
                         return 'A';
                     }
