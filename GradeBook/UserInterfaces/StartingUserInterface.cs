@@ -44,7 +44,7 @@ namespace GradeBook.UserInterfaces
             var name = Enum.Parse(typeof(GradeBookType),parts[2]);
             switch (name)
             {
-                case GradeBookType.Ranked:
+                case GradeBookType.ranked:
                     {
                         gradeBook = new RankedGradeBook(parts[1]);
                         break;

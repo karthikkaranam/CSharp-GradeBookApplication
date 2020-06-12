@@ -10,7 +10,7 @@ namespace GradeBook.GradeBooks
     {
         public RankedGradeBook(string name) : base(name)
         {
-            Type = GradeBookType.Ranked;
+            Type = GradeBookType.ranked;
         }
         public override char GetLetterGrade(double averageGrade)
         {
