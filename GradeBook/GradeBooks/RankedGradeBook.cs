@@ -11,5 +11,32 @@ namespace GradeBook.GradeBooks
         {
             Type = GradeBookType.Ranked;
         }
+        public override char GetLetterGrade(double averageGrade)
+        {
+            if(this.Students.Count < 5)
+            {
+                throw new InvalidOperationException();
+            }
+            switch (averageGrade)
+            {
+                case double grade when grade >= 20:
+                    {
+                        return 'A';
+                    }
+                case double grade when grade > 20 & grade <= 40:
+                    {
+                        return 'B';
+                    }
+                case double grade when grade > 40 & grade <= 60:
+                    {
+                        return 'C';
+                    }
+                case double grade when grade > 60 & grade <= 80:
+                    {
+                        return 'D';
+                    }
+            }
+            return 'F';
+        }
     }
 }
